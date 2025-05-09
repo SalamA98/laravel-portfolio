@@ -21,9 +21,9 @@ use Illuminate\Support\Facades\Route;
 });*/
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::view('/contact', 'pages.contact');
+Route::view('/contact', 'pages.contact')->name('contact');;
 Route::post('/contact',function(HttpRequest $request){
     //$data = $request -> all();
     //$request->dd();
@@ -46,9 +46,9 @@ Route::post('/contact',function(HttpRequest $request){
 Route::get('/admin/messages',function(){
     $messages = Message::all();
     return view('messages.index', compact('messages'));
-});
+})->name('message.store');
 
 Route::get('/admin/messages/{id}',function($id){
-    $message = Message::find($id);
+    $message = Message::findOrFail($id);
     return view('messages.show',compact('message'));
 })->name('messages.show');

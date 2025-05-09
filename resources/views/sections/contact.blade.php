@@ -18,7 +18,7 @@
             </div>
         @endif-->
 
-        <form  action="/contact" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
+        <form  action="{{route('contact')}}" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
             @csrf
             <div class="form-row">
                 <div class="form-group col-sm-6">
