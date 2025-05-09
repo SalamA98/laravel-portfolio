@@ -51,4 +51,4 @@ Route::get('/admin/messages',function(){
 Route::get('/admin/messages/{id}',function($id){
     $message = Message::find($id);
     return view('messages.show',compact('message'));
-});
+})->name('messages.show');
