@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MessageController;
 use App\Models\Message;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Http\Request as HttpRequest;
@@ -19,36 +22,10 @@ use Illuminate\Support\Facades\Route;
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [HomeController::class, 'welcome'] )->name('home');
 
 Route::view('/contact', 'pages.contact')->name('contact');;
-Route::post('/contact',function(HttpRequest $request){
-    //$data = $request -> all();
-    //$request->dd();
-    $request-> validate([
-        'name' => 'required | min:3 | max: 50',
-        'email' => 'required | email',
-        'content' => 'required',
-    ]);
-    
-    $message = new Message();
-    $message-> name = $request->name;
-    $message-> email = $request->email;
-    $message-> content = $request->content;
-    $message->save();
-    return redirect('/#contact');
-    /*dd($request->all());
-    thank you page return view('sections\header');*/
-}); 
 
-Route::get('/admin/messages',function(){
-    $messages = Message::all();
-    return view('messages.index', compact('messages'));
-})->name('message.store');
-
-Route::get('/admin/messages/{id}',function($id){
-    $message = Message::findOrFail($id);
-    return view('messages.show',compact('message'));
-})->name('messages.show');
+Route::post('/contact',[MessageController::class ,'store'])->name('message.store'); 
+Route::get('/admin/messages',[MessageController::class , 'index'])->name('message.index');
+Route::get('/admin/messages/{id}',[MessageController::class , 'show'])->name('messages.show');
