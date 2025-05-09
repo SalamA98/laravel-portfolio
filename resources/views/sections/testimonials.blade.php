@@ -1,5 +1,5 @@
-   <!-- testimonial section -->
-   <section class="section" id="testmonial">
+<!-- testimonial section -->
+<section class="section" id="testmonial">
     <div class="container text-center">
         <p class="section-subtitle">What Think Client About Me ?</p>
         <h6 class="section-title mb-6">Testmonial</h6>
@@ -36,4 +36,5 @@
             </div>
         </div>
     </div> <!-- end of container -->
-</section> <!-- end of testimonial section -->
+</section>
+ <!-- end of testimonial section -->
