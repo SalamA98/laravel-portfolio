@@ -1,28 +1,27 @@
+@php
+    $about = \App\Models\AboutMe::first();
+@endphp
+
+@if($about)
 <!-- about section -->
 <section class="section pt-0" id="about">
-    <!-- container -->
     <div class="container text-center">
-        <!-- about wrapper -->
         <div class="about">
             <div class="about-img-holder">
-                <img src="{{ asset('imgs/me.png') }}" class="about-img"
-                    alt="Download free bootstrap 4 landing page, free bootstrap 4 templates, meyawo Landing page">
+                @if($about->image)
+                    <img src="{{ asset('storage/' . $about->image) }}" class="about-img" alt="About Image">
+                @else
+                    <img src="{{ asset('imgs/me.png') }}" class="about-img" alt="Default Image">
+                @endif
             </div>
             <div class="about-caption">
-                <p class="section-subtitle">Who Am I ?</p>
-                <h2 class="section-title mb-3">About Me</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae aliquid ad provident aut
-                    fuga animi soluta quae eos non cupiditate voluptates dolorem, doloremque quos dicta quibusdam
-                    impedit iure nemo a iste
-                    <br>culpa! Quasi quibusdam hic recusandae delectus velit officiis explicabo voluptatibus! Nemo
-                    esse similique, voluptates labore distinctio, placeat explicabo facilis molestias, blanditiis
-                    culpa iusto voluptatem ratione eligendi a, quia temporibus velit vero ipsa sint ex voluptatum
-                    expedita aliquid! Debitis, nam!
-                </p>
-                <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button>
+                <p class="section-subtitle">{{ $about->subtitle }}</p>
+                <h2 class="section-title mb-3">{{ $about->title }}</h2>
+                <p>{{ $about->description }}</p>
+                <a href="{{ Storage::url('cv/Salam Arida.pdf') }}" class="btn-rounded btn btn-outline-primary mt-4">Download CV</a>
             </div>
-        </div><!-- end of about wrapper -->
-    </div><!-- end of container -->
+        </div>
+    </div>
 </section>
+@endif
 <!-- end of about section -->
