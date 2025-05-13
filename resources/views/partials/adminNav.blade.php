@@ -1,5 +1,5 @@
 <!-- Page Navbar -->
-<nav class="custom-navbar" data-spy="affix" >
+<nav class="custom-navbar" data-spy="affix" data-offset-top="10" >
     <div class="container">
         <a class="logo" href="#">Admin</a>
         {{--<ul class="nav">
