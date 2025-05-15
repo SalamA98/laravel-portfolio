@@ -27,7 +27,7 @@ class MessageController extends Controller
         $message-> email = $request->email;
         $message-> content = $request->content;
         $message->save();
-        return redirect('/#contact');
+        return redirect('/#contact')->with('success', 'Your message has been sent successfully!');
         /*dd($request->all());
         thank you page return view('sections\header');*/
     }

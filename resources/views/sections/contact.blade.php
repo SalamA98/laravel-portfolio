@@ -17,6 +17,11 @@
                 </ul>
             </div>
         @endif-->
+        @if(session('success'))
+            <div class="alert alert-success text-center">
+                {{ session('success') }}
+            </div>
+        @endif
 
         <form  action="{{route('contact')}}" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
             @csrf
