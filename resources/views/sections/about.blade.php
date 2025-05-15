@@ -18,7 +18,11 @@
                 <p class="section-subtitle">{{ $about->subtitle }}</p>
                 <h2 class="section-title mb-3">{{ $about->title }}</h2>
                 <p>{{ $about->description }}</p>
-                <a href="{{ Storage::url('cv/Salam Arida.pdf') }}" class="btn-rounded btn btn-outline-primary mt-4">Download CV</a>
+                @if($about->cv)
+                    <a href="{{ Storage::url($about->cv) }}" target="_blank" class="btn-rounded btn btn-outline-primary mt-4">
+                        📄 Download CV
+                    </a>
+                @endif
             </div>
         </div>
     </div>

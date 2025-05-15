@@ -7,6 +7,12 @@
     <div class="container py-5">
         <div class="card shadow p-4">
             <h2 class="mb-4 text-center">About Me Section</h2>
+            
+            @if(session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
 
             <form action="{{ route('about.update', $about->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -51,6 +57,12 @@
                 <div class="form-group">
                     <label>Upload New Image</label>
                     <input type="file" name="image" class="form-control-file">
+                </div>
+
+                {{-- Upload New CV --}}
+                <div class="form-group mt-3">
+                    <label>Upload CV (PDF)</label>
+                    <input type="file" name="cv" class="form-control-file">
                 </div>
 
                 {{-- Submit --}}
