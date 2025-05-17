@@ -4,7 +4,7 @@
     @include('sections.header')
     @include('sections.about')
 
-    @include('sections.portfolio')
+    @include('sections.projects')
     @include('sections.hireMe')
     @include('sections.volunteering')
     @include('sections.testomonials')
