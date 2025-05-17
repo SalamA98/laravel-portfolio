@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-4">
                 <a href="#" class="portfolio-card">
-                    <img src="{{asset('imgs/folio-1.jpg')}}" class="portfolio-card-img"
+                    <img src="{{asset('imgs/rbc.png')}}" class="portfolio-card-img"
                         alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, meyawo Landing page">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">

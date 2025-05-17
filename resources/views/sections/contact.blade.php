@@ -4,7 +4,7 @@
         <p class="section-subtitle">How can you communicate?</p>
         <h6 class="section-title mb-5">Contact Me</h6>
         <!-- contact form -->
-        <!--@if ($errors->any())
+        {{--@if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
 
@@ -16,7 +16,7 @@
 
                 </ul>
             </div>
-        @endif-->
+        @endif-->--}}
         @if(session('success'))
             <div class="alert alert-success text-center">
                 {{ session('success') }}
