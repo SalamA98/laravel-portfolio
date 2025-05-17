@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@yield('title', 'Admin Dashboard')</title>
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}"> <!-- اعملي ملف مخصص لاحقًا -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Top header -->
+    <!-- Toggle Sidebar Button -->
+    <div class="bg-dark p-2 d-flex justify-content-between align-items-center">
+        <div>
+            <button class="btn btn-outline-light" id="toggleSidebar">☰</button>
+        </div>
+        <h2 class="text-white" >👩‍💻 Salam Arida</h2>
+        <form action="{{ route('logout') }}" method="POST" class="mb-0">
+            @csrf
+            <button type="submit" class="btn btn-sm btn-danger">Logout</button>
+        </form>
+    </div>
+
+    <div class="d-flex">
+        <!-- Sidebar -->
+        <div id="sidebar" class="bg-dark text-white p-3" style="min-width: 200px; min-height: 100vh; transition: all 0.3s;">
+            <h4 class="text-center">Admin</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a href="{{ route('dashboard') }}" class="nav-link text-white">Dashboard</a></li>
+                <li class="nav-item"><a href="{{ route('about.edit') }}" class="nav-link text-white">About Me</a></li>
+                <li class="nav-item"><a href="{{ route('projects.index') }}" class="nav-link text-white">Projects</a></li>
+                <li class="nav-item"><a href="{{ route('certificates.index') }}" class="nav-link text-white">Certificates</a></li>
+                <li class="nav-item"><a href="{{ route('message.index') }}" class="nav-link text-white">Messages</a></li>
+            </ul>
+        </div>
+
+            <!-- Main content -->
+            <div class="flex-grow-1 p-4">
+                <h3 class="mb-4">@yield('title')</h3>
+                @yield('content')
+            </div>
+    </div>
+</body>
+<script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleButton = document.getElementById('toggleSidebar');
+
+    toggleButton.addEventListener('click', () => {
+        sidebar.classList.toggle('d-none');
+    });
+</script>
+</html>

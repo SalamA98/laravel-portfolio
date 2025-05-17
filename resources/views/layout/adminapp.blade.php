@@ -5,8 +5,8 @@
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-    @include('partials.adminNav')
 
+    @include('partials.navbar')
     @yield('content')
 
     @include('partials.footer')
