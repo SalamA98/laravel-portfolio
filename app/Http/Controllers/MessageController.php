@@ -36,4 +36,11 @@ class MessageController extends Controller
         $message = Message::findOrFail($id);
         return view('messages.show',compact('message'));
     }
+
+    public function destroy(string $id)
+    {
+        $project = Message::findOrFail($id);
+        $project->delete();
+        return redirect()->back()->with('success', 'Message deleted successfully!');
+    }
 }

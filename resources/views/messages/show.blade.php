@@ -1,17 +1,19 @@
-@extends('layout.adminapp')
-
-@section('title','Messages' . ' - ' . $message->name)
+@extends('layout.admin-dashboard')
+@section('title','Messages Details')
 
 @section('content')
-        <section class="section" >
-            <div class="container text-center">
-                <h6 class="section-title mb-6">  </h6>
-                    <div class="testimonial-card">
-                        <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">{{$message->content}}</p>
-                            <h6 class="testimonial-card-title">{{$message->name}}</h6>
-                        </div>
-                    </div>
-            </div> <!-- end of container -->
-        </section>
+
+    <div class="container" style="margin-top: 75px"> 
+        <h3 class="section-title">{{$message->name}}'s Message</h3>
+        <div class="card  w-50" style="margin-top: 25px;">
+            <div class="card-header">
+                <strong> {{ $message->email }}</strong>
+            </div>
+            <div class="card-body">
+            <p><strong>from:</strong> {{ $message->name }}</p>
+            <p><strong>Content:</strong> {{ $message->content }}</p>
+            <a href="{{ route('message.index') }}" class="btn btn-primary  mt-4 ml-4" style="float-right">Back to list</a>
+            </div>
+        </div>
+    </div>
 @endsection
