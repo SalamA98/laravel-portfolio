@@ -1,4 +1,4 @@
-@extends('layout.adminapp')
+@extends('layout.admin-dashboard')
 
 @section('title', 'Edit Project')
 

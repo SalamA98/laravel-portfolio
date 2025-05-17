@@ -1,9 +1,10 @@
-@extends('layout.adminapp')
+@extends('layout.admin-dashboard')
+
 
 @section('title', 'Edit About Me')
 
 @section('content')
-    <div class="container py-5" style="margin-top: 120px;"">
+    <div class="container py-5">
         <div class="card shadow p-4">
             <h2 class="mb-4 text-center">About Me Section</h2>
             

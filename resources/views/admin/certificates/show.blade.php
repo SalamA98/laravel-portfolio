@@ -1,12 +1,11 @@
-@extends('layout.adminapp')
+@extends('layout.admin-dashboard')
+
 
 @section('title', 'Certificate Details')
 
 @section('content')
 <section id="home" class="header">
     <div class="container"> 
-        <h2 class="section-title">Certificate Details</h2>
-
         <p><strong>Title:</strong> {{ $certificate->title }}</p>
         <p><strong>Issuer:</strong> {{ $certificate->issuer }}</p>
         <p><strong>Date:</strong> {{ $certificate->date ? $certificate->date->format('Y-m-d') : '-' }}</p> 

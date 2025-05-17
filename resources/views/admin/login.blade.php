@@ -1,4 +1,4 @@
-@extends('layout.admin-dashboard')
+@extends('layout.auth')
 
 @section('title', 'Admin Login')
 
@@ -11,12 +11,13 @@
 
         <div class="form-group mb-3">
             <label>Email</label>
-            <input type="email" name="email" class="form-control" required autofocus>
+            <input type="email" name="email" class="form-control" required autofocus placeholder="Enter email">
         </div>
 
         <div class="form-group mb-3">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control" required>
+            <label>Password </label>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            
         </div>
 
         @if($errors->any())
@@ -26,7 +27,7 @@
         @endif
 
         <div class="text-center">
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary btn-rounded">Login</button>
         </div>
 
     </form> 

@@ -12,7 +12,8 @@
             <div class="card-body">
             <p><strong>from:</strong> {{ $message->name }}</p>
             <p><strong>Content:</strong> {{ $message->content }}</p>
-            <a href="{{ route('message.index') }}" class="btn btn-primary  mt-4 ml-4" style="float-right">Back to list</a>
+            <div class="text-center">
+            <a href="{{ route('message.index') }}" class="btn btn-primary  mt-4 ml-4" style="float-right">Back to list</a></div>
             </div>
         </div>
     </div>

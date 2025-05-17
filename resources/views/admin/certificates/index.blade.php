@@ -1,4 +1,4 @@
-@extends('layout.adminapp')
+@extends('layout.admin-dashboard')
 
 @section('title', 'Certificates List')
 
@@ -26,7 +26,7 @@
                 <td>{{ $certificate->issuer }}</td>
                 <td>{{ $certificate->date ? $certificate->date->format('Y-m-d') : '-' }}</td>
                 <td>
-                    <a href="{{ route('certificates.show', $certificate->id) }}" class="btn btn-info btn-sm">View</a>
+                    <a href="{{ route('certificates.show', $certificate->id) }}" class="btn  btn-success btn-sm">View</a>
                     <a href="{{ route('certificates.edit', $certificate->id) }}" class="btn btn-warning btn-sm">Edit</a>
                     <form action="{{ route('certificates.destroy', $certificate->id) }}" method="POST" style="display:inline-block;" onsubmit="return confirm('Delete this certificate?');">
                         @csrf
