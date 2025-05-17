@@ -3,7 +3,6 @@
 @section('content')
     @include('sections.header')
     @include('sections.about')
-
     @include('sections.projects')
     @include('sections.hireMe')
     @include('sections.volunteering')

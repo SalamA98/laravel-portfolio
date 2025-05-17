@@ -7,8 +7,7 @@
                 <span class="down">I am Salam Arida</span>
             </h1>
             <p class="header-subtitle">Computer Engineer</p>
-
-            <button class="btn btn-primary">Visit My Works</button>
+            <a href="#projects"><button class="btn btn-primary" onClick="#projects">Visit My Works</button></a>
         </div>
     </header>
 <!-- end of page header -->

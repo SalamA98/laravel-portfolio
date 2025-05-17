@@ -23,7 +23,7 @@
                         <td>{{ $message->created_at }}</td>
                         <td>
                             <a href="{{ route('messages.show', $message->id) }}" class="btn btn-sm btn-success">view</a>
-                            <form action="{{ route('messages.destroy', $message->id) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('messages.destroy', $message->id) }}" method="POST" style="display:inline;"  onsubmit="return confirm('Are you sure you want to delete this certificate?');"> 
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
@@ -36,4 +36,4 @@
         </div>
     </section>
 @endsection
-<!--/admin/messages/{{$message->id}}!-->
+{{--/admin/messages/{{$message->id}}!-->--}}
