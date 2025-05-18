@@ -15,11 +15,13 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         Admin::updateOrCreate(
-            ['email' => 'salam1998na@gmail.com'],
-            [
-                'name' => 'Salam Arida',
-                'password' => '$12$EW7Uno5yhljnJ4WVcJpC5enAfn834IKIKXTSKKYYOAIOWF8JcHfxm',
-            ]
-        );
+    ['email' => 'salam1998na@gmail.com'],
+    [
+        'name' => 'Salam Arida',
+        'email' => 'salam1998na@gmail.com',
+        'password' => bcrypt('P@ssw0rd'),
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
 }
 }
