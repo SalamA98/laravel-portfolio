@@ -9,41 +9,6 @@ use Illuminate\Support\Facades\Storage;
 
 class AboutMeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit()
     {
         $about = AboutMe::first(); 
@@ -61,7 +26,6 @@ class AboutMeController extends Controller
         $data = $request->only('subtitle', 'title', 'description');
 
         if ($request->hasFile('image')) {
-            // حذف الصورة القديمة
             if ($about->image && Storage::disk('public')->exists($about->image)) {
                 Storage::disk('public')->delete($about->image);
             }
@@ -70,7 +34,6 @@ class AboutMeController extends Controller
         }
 
         if ($request->hasFile('cv')) {
-            // حذف CV القديم
             if ($about->cv && Storage::disk('public')->exists($about->cv)) {
                 Storage::disk('public')->delete($about->cv);
             }
@@ -81,15 +44,8 @@ class AboutMeController extends Controller
         }
 
         $about->update($data);
-               // dd($data);
+        // dd($data);
         return redirect()->back()->with('success', 'About Me updated successfully!!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }

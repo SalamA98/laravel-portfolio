@@ -10,7 +10,7 @@ class MessageController extends Controller
 
     public function index(){
         $messages = Message::all();
-        return view('messages.index', compact('messages'));
+        return view('admin.messages.index', compact('messages'));
     }
 
     public function store(Request $request){
@@ -34,7 +34,7 @@ class MessageController extends Controller
 
     public function show($id){
         $message = Message::findOrFail($id);
-        return view('messages.show',compact('message'));
+        return view('admin.messages.show',compact('message'));
     }
 
     public function destroy(string $id)

@@ -3,7 +3,7 @@
 @section('title', 'Edit Project')
 
 @section('content')
-<div class="container py-5">
+<div class="container py-5 card shadow p-4" style="margin-top: 80px;">
     <h2 class="mb-4">Edit Project</h2>
 
     <form action="{{ route('projects.update', $project->id) }}" method="POST" enctype="multipart/form-data">

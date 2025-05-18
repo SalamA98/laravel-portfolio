@@ -5,7 +5,7 @@
 
 @section('content')
 
-<div class="container py-5 card shadow p-4" style="margin-top: 120px;"  >
+<div class="container py-5 card shadow p-4" style="margin-top: 80px;"  >
     <h2 >Add New Project</h2>
 
     <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">

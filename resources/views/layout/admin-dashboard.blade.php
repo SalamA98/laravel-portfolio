@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>@yield('title', 'Admin Dashboard')</title>
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}"> <!-- اعملي ملف مخصص لاحقًا -->
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/themify-icons@0.1.2/css/themify-icons.css">
     
 </head>
 @if (session('success'))
@@ -24,13 +25,13 @@
     <!-- Top header -->
     <!-- Toggle Sidebar Button -->
     <div class="bg-dark p-2 d-flex justify-content-between align-items-center">
-        <div>
-            <button class="btn btn-outline-light" id="toggleSidebar">☰</button>
-        </div>
-        <h2 class="text-white" >👩‍💻 Salam Arida</h2>
+        <button class="btn btn-outline-light" id="toggleSidebar">☰</button>
+
+        <h2 class="text-white">👩‍💻 Salam Arida</h2>
+
         <form action="{{ route('logout') }}" method="POST" class="mb-0">
             @csrf
-            <button type="submit" class="btn btn-sm btn-danger">Logout</button>
+            <button type="submit" class="btn btn-sm btn-danger" class="ti-email">Logout</button>
         </form>
     </div>
 
@@ -43,7 +44,8 @@
                 <li class="nav-item"><a href="{{ route('about.edit') }}" class="nav-link text-white">About Me</a></li>
                 <li class="nav-item"><a href="{{ route('projects.index') }}" class="nav-link text-white">Projects</a></li>
                 <li class="nav-item"><a href="{{ route('certificates.index') }}" class="nav-link text-white">Certificates</a></li>
-                <li class="nav-item"><a href="{{ route('message.index') }}" class="nav-link text-white">Messages</a></li>
+                <li class="nav-item"><a href="{{ route('message.index') }}" class="nav-link text-white">Messages</a></li><br>
+                <li class="nav-item"><a href="{{ route('user.edit') }}" class="nav-link text-white">change password</a></li>
             </ul>
         </div>
 
